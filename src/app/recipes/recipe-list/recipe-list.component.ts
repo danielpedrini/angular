@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Recipe } from '../recipe.model';
 
 @Component({
@@ -6,12 +6,12 @@ import { Recipe } from '../recipe.model';
   templateUrl: './recipe-list.component.html',
   styleUrls: ['./recipe-list.component.scss']
 })
-export class RecipeListComponent implements OnInit {
+export class RecipeListComponent {
+  @Output() recipeWasSelected: EventEmitter<Recipe> = new EventEmitter();
   recipes: Recipe [] = [new Recipe('Fígado Acebolado', 'Um delicioso prato de Fígado acebolado', 'https://chefnachapa.com.br/wp-content/uploads/2021/10/Figado-acebolado.jpg')];
 
-  constructor() { }
-
-  ngOnInit(): void {
+  onRecipeSelected(recipe: Recipe) {
+    this.recipeWasSelected.emit(recipe);
+    console.log("Recipe-list" + recipe);
   }
-
 }

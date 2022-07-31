@@ -4,16 +4,16 @@
             <div class="row">
                 <div class="col-sm-5 form-group">
                   <label for="name">Nome</label>
-                  <input type="text" name="" id="name" class="form-control">
+                  <input #nameInput type="text" name="" id="name" class="form-control">
                 </div>
                 <div class="col-sm-2 form-group">
                     <label for="amout">Quantidade</label>
-                    <input type="number" name="" id="amout" class="form-control">
+                    <input #amoutInput type="number" name="" id="amout" class="form-control">
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <button class="btn btn-success" type="submit">Adicionar</button>
+                    <button class="btn btn-success" type="submit" (click)="addIngredient()" >Adicionar</button>
                     <button class="btn btn-danger" type="submit">Apagar</button>
                     <button class="btn btn-primary" type="submit">Limpar</button>
                 </div>
