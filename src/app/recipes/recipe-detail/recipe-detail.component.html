@@ -14,7 +14,7 @@
             <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">Gerenciar Receita</button>
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" (click)="addToSl()">Adicionar a lista do Shopping</a></li>
-                <li><a class="dropdown-item">Editar a Receita</a></li>
+                <li><a class="dropdown-item" [routerLink]="['edit']">Editar a Receita</a></li>
                 <li><a class="dropdown-item">Apagar a Receita</a></li>
             </ul>
         </div>
