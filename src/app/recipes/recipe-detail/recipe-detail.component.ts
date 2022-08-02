@@ -1,3 +1,4 @@
+import { RecipeService } from './../recipe.service';
 import { Recipe } from './../recipe.model';
 import { Component, Input, OnInit } from '@angular/core';
 
@@ -7,6 +8,12 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./recipe-detail.component.scss']
 })
 export class RecipeDetailComponent {
-@Input() recipe: Recipe;
+  @Input() recipe: Recipe;
 
+  constructor(private recipeService: RecipeService) {}
+  
+  addToSl() {
+    this.recipeService.addIngredientsToSL(this.recipe.ingredients);
+    
+  }
 }
